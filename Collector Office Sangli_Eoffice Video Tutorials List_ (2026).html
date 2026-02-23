@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>e-Office Support : Video Tutorials List (2026)</title>
+<style>
+:root{
+  --p:#0b3c5d;
+  --a:#ff9800;
+  --g:#2e7d32;
+  --b:#6a1b9a;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:#eef2f7}
+
+/* HEADER */
+header{
+  background:linear-gradient(135deg,#0b3c5d,#124e75);
+  color:#fff;
+  padding:25px;
+  text-align:center;
+  box-shadow:0 6px 20px rgba(0,0,0,.4);
+  border-bottom:4px solid #ff9800;
+}
+header h1{margin:0;font-size:30px;text-shadow:2px 2px 6px rgba(0,0,0,.6);}
+header p{margin:6px 0 10px;font-size:15px;opacity:.9}
+header a{
+  background:linear-gradient(145deg,#ffb74d,#f57c00);
+  color:#fff;
+  padding:10px 22px;
+  border-radius:28px;
+  text-decoration:none;
+  font-weight:600;
+  font-size:14px;
+  display:inline-block;
+  margin-top:12px;
+  box-shadow:0 4px 10px rgba(0,0,0,.3);
+  transition:transform .2s ease;
+}
+header a:hover{transform:scale(1.05);}
+
+/* LANGUAGE TOGGLE */
+.lang-toggle{
+  text-align:center;
+  margin:15px;
+}
+.lang-toggle button{
+  background:linear-gradient(145deg,#0b3c5d,#124e75);
+  color:#fff;
+  border:none;
+  padding:8px 16px;
+  margin:0 6px;
+  border-radius:20px;
+  cursor:pointer;
+  font-size:14px;
+  font-weight:600;
+  box-shadow:0 4px 10px rgba(0,0,0,.3);
+}
+.lang-toggle button.active{
+  background:linear-gradient(145deg,#ffb74d,#f57c00);
+}
+
+/* INTRODUCTION */
+.intro{
+  background:#fff;
+  margin:20px;
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 4px 12px rgba(0,0,0,.15);
+}
+.intro h2{margin-top:0;color:var(--p)}
+.intro p{font-size:15px;line-height:1.6}
+
+/* LOGIN BUTTONS */
+.login-links{
+  text-align:center;
+  margin:20px;
+}
+.login-links a{
+  background:linear-gradient(145deg,#4caf50,#2e7d32);
+  color:#fff;
+  padding:10px 20px;
+  margin:6px;
+  border-radius:24px;
+  text-decoration:none;
+  font-weight:600;
+  font-size:14px;
+  box-shadow:0 4px 10px rgba(0,0,0,.3);
+  transition:transform .2s ease;
+}
+.login-links a:hover{transform:scale(1.05);}
+
+/* TABS */
+.tabs{
+  display:flex;
+  justify-content:center;
+  margin:20px;
+}
+.tabs button{
+  background:linear-gradient(145deg,#0b3c5d,#124e75);
+  color:#fff;
+  border:none;
+  padding:12px 20px;
+  margin:0 6px;
+  border-radius:24px;
+  cursor:pointer;
+  font-size:14px;
+  font-weight:600;
+  box-shadow:0 6px 14px rgba(0,0,0,.3);
+  transition:transform .2s ease, background .3s ease;
+}
+.tabs button.active{
+  background:linear-gradient(145deg,#ffb74d,#f57c00);
+}
+.tabs button:hover{transform:translateY(-3px);}
+
+/* VIDEO GRID */
+.video-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:16px;
+  margin:20px;
+}
+.video{
+  background:#fff;
+  border-radius:14px;
+  padding:16px;
+  box-shadow:0 6px 16px rgba(0,0,0,.15);
+  border-left:12px solid transparent;
+}
+.video.login{border-left-color:#2e7d32;}
+.video.files{border-left-color:#6a1b9a;}
+.video.errors{border-left-color:#d32f2f;}
+.video.features{border-left-color:#ff9800;}
+.video h3{margin:0 0 6px;font-size:16px}
+.video p{margin:0 0 10px;font-size:14px}
+.actions a{
+  display:inline-block;
+  padding:8px 14px;
+  border-radius:20px;
+  background:var(--p);
+  color:#fff;
+  text-decoration:none;
+  font-size:13px;
+}
+
+/* FOOTER */
+footer{
+  background:#0b3c5d;
+  color:#fff;
+  text-align:center;
+  padding:12px;
+  font-size:12px;
+}
+</style>
+<script>
+// Simple tab filter
+function showCategory(cat){
+  let videos=document.querySelectorAll('.video');
+  videos.forEach(v=>{
+    if(cat==='all' || v.classList.contains(cat)){
+      v.style.display='block';
+    }else{
+      v.style.display='none';
+    }
+  });
+  document.querySelectorAll('.tabs button').forEach(b=>b.classList.remove('active'));
+  document.getElementById(cat).classList.add('active');
+}
+
+// Language toggle
+function setLanguage(lang){
+  document.querySelectorAll('.en').forEach(el=>{
+    el.style.display=(lang==='en')?'inline':'none';
+  });
+  document.querySelectorAll('.mr').forEach(el=>{
+    el.style.display=(lang==='mr')?'inline':'none';
+  });
+  document.querySelectorAll('.lang-toggle button').forEach(b=>b.classList.remove('active'));
+  document.getElementById(lang).classList.add('active');
+}
+</script>
+</head>
+<body onload="setLanguage('mr')">
+
+<!-- HEADER -->
+<header>
+  <h1><span class="en">e-Office Support : Video Tutorials List (2026)</span><span class="mr">ई-ऑफिस सहाय्य : व्हिडिओ मार्गदर्शक यादी (२०२६)</span></h1>
+  <p><span class="en">Topic-wise e-Office Training Videos</span><span class="mr">विषयानुसार ई-ऑफिस प्रशिक्षण व्हिडिओ</span></p>
+  <a href="https://sangli.nic.in" target="_blank"><span class="en">HOME</span><span class="mr">मुख्यपृष्ठ </span></a>
+</header>
+
+<!-- LANGUAGE TOGGLE -->
+<div class="lang-toggle">
+  <button id="en" onclick="setLanguage('en')">English</button>
+  <button id="mr" class="active" onclick="setLanguage('mr')">मराठी</button>
+</div>
+
+<!-- INTRODUCTION -->
+<div class="intro">
+  <h2><span class="en">About e-Office Maharashtra</span><span class="mr">ई-ऑफिस महाराष्ट्र बद्दल</span></h2>
+  <p>
+    <span class="en"><b>e-Office Maharashtra</b> e-Office Maharashtra is a digital governance initiative that simplifies administrative processes in government offices. It includes paperless workflow, secure digital signatures, efficient file management, and transparent communication. Officers and staff can create receipts, manage files, make notings, and generate reports. This training portal provides subject-wise video tutorials to help staff use the system effectively.</span>
+    <span class="mr"><b>ई-ऑफिस महाराष्ट्र</b> ही एक डिजिटल गव्हर्नन्स योजना आहे जी 
+    शासकीय कार्यालयांमधील प्रशासकीय प्रक्रिया सुलभ करते. यामध्ये 
+    पेपरलेस वर्कफ्लो, सुरक्षित डिजिटल स्वाक्षऱ्या, कार्यक्षम फाईल 
+    व्यवस्थापन आणि पारदर्शक संवाद यांचा समावेश आहे. अधिकारी व कर्मचारी 
+    रिसिप्ट तयार करू शकतात, फाईल्स व्यवस्थापित करू शकतात, टिपण्णी 
+    (Notings) करू शकतात आणि अहवाल तयार करू शकतात. या प्रशिक्षण पोर्टलवर 
+    विषयानुसार व्हिडिओ ट्युटोरियल्स उपलब्ध करून दिले आहेत ज्यामुळे 
+    कर्मचारी प्रणाली प्रभावीपणे वापरू शकतील.</span>
+  </p>
+
+</div>
+
+<!-- LOGIN LINKS -->
+<div class="login-links">
+  <a href="https://mahaeoffice1.maharashtra.gov.in/" target="_blank"><span class="en">Collector Office Sangli Login</span><span class="mr">जिल्हाधिकारी कार्यालय सांगली लॉगिन</span></a>
+  <a href="https://eofficepune.maharashtra.gov.in/" target="_blank"><span class="en">Pune Division Login</span><span class="mr">पुणे विभाग लॉगिन</span></a>
+  <a href="https://mahapar.maharashtra.gov.in/" target="_blank"><span class="en">Mahapar Login</span><span class="mr">महापार लॉगिन</span></a>
+  <a href="https://drive.google.com/drive/folders/1pLJdxI_t-ZIJzq9BxYOE3NQ2uDLozZgP" target="_blank"><span class="en">DSC Signer Service app </span><span class="mr"> DSC Signer Service app</span></a>
+	<a href="https://docs.google.com/spreadsheets/d/1HfmWMe07HxI3L4ApMToxKxlqsmNpwZFhWWNzMdUj7Ho/edit?pli=1&gid=0#gid=0" target="_blank"><span class="en">Sangli Dist e-office Contact</span><span class="mr">सांगली जिल्हा ई ऑफिस संपर्क</span></a>
+
+</div>
+
+<!-- TABS -->
+<div class="tabs">
+  <button id="all" class="active" onclick="showCategory('all')">All</button>
+  <button id="login" onclick="showCategory('login')">Login</button>
+  <button id="files" onclick="showCategory('files')">Files</button>
+  <button id="errors" onclick="showCategory('errors')">Errors</button>
+  <button id="features" onclick="showCategory('features')">Features</button>
+</div>
+
+<!-- VIDEO GRID -->
+<div class="video-grid">
+  <div class="video login">
+    <h3>How to Login in eOffice</h3>
+    <p>ई-ऑफिस प्रणालीमध्ये लॉग इन करण्याची प्राथमिक पद्धत.</p>
+    <div class="actions"><a href="https://youtu.be/foSFMXOpKNc" target="_blank">▶ Watch Video</a></div>
+  </div>
+
+<div class="video files rank1">
+    <h3>How to create e-office login & receipt</h3>
+    <p>ई-ऑफिस लॉगिन & रिसीप्ट कशी बनवायची.</p>
+    <div class="actions"><a href="https://youtu.be/Q93yr5k4WgQ" target="_blank">▶ Watch Video</a></div>
+  </div>
+
+  <div class="video files rank1">
+    <h3>ई ऑफिस 7.2.5 अर्ज फाईल व टिपण्णी</h3>
+    <p>नवीन फाईल तयार करणे, टिपण्णी (Noting) आणि आदेश तयार करण्याची सविस्तर माहिती.</p>
+    <div class="actions"><a href="https://youtu.be/Ijtc6e0tYn0" target="_blank">▶ Watch Video</a></div>
+  </div>
+
+  <div class="video files">
+    <h3>How to close and reopen file in e-office</h3>
+    <p>ई-ऑफिसमध्ये फाइल कशी बंद करायची आणि पुन्हा उघडायची.</p>
+    <div class="actions"><a href="https://youtu.be/5S941zf7ktI" target="_blank">▶ Watch Video</a></div>
+  </div>
+
+  <div class="video files">
+    <h3>How to park, unpark and pull back file in e-office</h3>
+    <p>ई-ऑफिसमध्ये पार्क कसे करावे आणि फाइल कशी मागे घ्यावी.</p>
+    <div class="actions"><a href="https://youtu.be/NP0DgLLAQg8" target="_blank">▶ Watch Video</a></div>
+  </div>
+
+  <div class="video errors">
+    <h3>eOffice Maharashtra 404 Error Fix</h3>
+    <p>रिसिप्ट किंवा ड्राफ्ट उघडताना येणारा '404 Error' दुरुस्त करणे.</p>
+    <div class="actions"><a href="https://youtu.be/wRsiytTlNU4" target="_blank">▶ Watch Video</a></div>
+  </div>
+
+  <div class="video errors">
+    <h3>e-Office Site Access Error Solution</h3>
+    <p>वेबसाईट लोड होत नसेल तर DNS सेटिंग्ज बदलून तो प्रॉब्लेम सोडवणे.</p>
+    <div class="actions"><a href="https://youtu.be/5lgxKlTy5Ew" target="_blank">▶ Watch Video</a></div>
+  </div>
+
+  <div class="video features">
+    <h3>How to used MIS Reports in e-office</h3>
+    <p>ई-ऑफिसमध्ये एमआयएस रिपोर्ट्स कसे वापरावेत.</p>
+    <div class="actions"><a href="https://youtu.be/WQWwsCafpYc" target="_blank">▶ Watch Video</a></div>
+  </div>
+
+  <div class="video features">
+    <h3>How voice to text feature can be used</h3>
+    <p>व्हॉइस टू टेक्स्ट फीचर कसे वापरता येईल.</p>
+    <div class="actions"><a href="https://youtu.be/r-gdglGf_Lc" target="_blank">▶ Watch Video</a></div>
+  </div>
+
+<div class="video features">
+    <h3>e-Office Digital Signature Complete Setup</h3>
+    <p>Digital Signature (DSC) कशी इन्स्टॉल आणि कॉन्फिगर करायची.</p>
+    <div class="actions"><a href="https://youtu.be/k8g_tMuW2PU" target="_blank">▶ Watch Video</a></div>
+    
+</div>
+
+  <div class="video login">
+    <h3>NIC Password Change</h3>
+    <p>एनआयसी (NIC) ईमेल किंवा 'परिचय' पोर्टलचा पासवर्ड बदलण्याची प्रक्रिया.</p>
+    <div class="actions"><a href="https://youtu.be/tmV0hg61zVw" target="_blank">▶ Watch Video</a></div>
+  </div>
+</div>
+
+
+<!-- LOGIN LINKS -->
+
+<div class="login-links">
+  <a href="https://notebooklm.google.com/notebook/1da11c9f-10ed-4a32-b879-403d8a13061e?authuser=1&pageId=none" target="_blank"><span class="en">e-office assistant</span><span class="mr">e-office assistant</span></a>
+  </div>
+
+
+
+<!-- FOOTER -->
+<footer>
+Design & Concept: <b>ITCELL SANGLI</b>, SNE, Sangli | Contact: <b>9767040560</b><br>
+© 2026
